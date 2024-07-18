@@ -12,7 +12,7 @@ function App() {
           <Chat
             input={message.input}
             userAnswers={message.questions}
-            answered={message.answered}
+            media={message.media}
           />
         ))}
       </div>

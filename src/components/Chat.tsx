@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import propic from "../assets/propic.jpeg";
 import { qa } from "../data/qa";
 import useTimelineStore from "../state-management/timeline/store";
@@ -5,9 +6,10 @@ import useTimelineStore from "../state-management/timeline/store";
 interface Props {
   input: string;
   userAnswers: string[];
+  media: string | undefined;
 }
 
-const Chat = ({ input, userAnswers }: Props) => {
+const Chat = ({ input, userAnswers, media }: Props) => {
   const { setTimeline, userResponses, setUserResponses } = useTimelineStore();
   const sentTime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
@@ -20,7 +22,7 @@ const Chat = ({ input, userAnswers }: Props) => {
   return (
     <div>
       <div>
-        <div className="chat chat-start">
+        <div className="chat chat-start max-w-[600px]">
           <div className="chat-image avatar">
             <div className="w-10 rounded-full">
               <img alt="Tailwind CSS chat bubble component" src={propic} />
@@ -29,8 +31,10 @@ const Chat = ({ input, userAnswers }: Props) => {
           <div className="chat-header">
             <time className="text-xs ml-2 opacity-50">{sentTime}</time>
           </div>
-          <div className="chat-bubble">{input}</div>
-          <div className="chat-footer opacity-50">Delivered</div>
+          <div className="chat-bubble">
+            {input}
+            <img src={media} />
+          </div>
         </div>
         <div className="chat chat-end my-5">
           {userChoice ? (
@@ -43,9 +47,7 @@ const Chat = ({ input, userAnswers }: Props) => {
                   />
                 </div>
               </div>
-              <div className="chat-header">
-                <time className="text-xs opacity-50">{sentTime}</time>
-              </div>
+              <div className="chat-header"></div>
               <div className="chat-bubble">{userChoice}</div>
               <div className="chat-footer opacity-50">Seen at {sentTime}</div>
             </>
