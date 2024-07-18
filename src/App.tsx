@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
 import useTimelineStore from "./state-management/timeline/store";

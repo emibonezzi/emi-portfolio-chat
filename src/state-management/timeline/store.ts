@@ -3,7 +3,9 @@ import { Message } from "../../entities/Message";
 
 interface TimelineStore {
   timeline: Message[];
-  setTimeline: (oldMessage: Message, newMessage: Message) => void;
+  userResponses: string[];
+  setTimeline: (newMessage: Message) => void;
+  setUserResponses: (response: string) => void;
 }
 
 const useTimelineStore = create<TimelineStore>((set) => ({
@@ -12,11 +14,13 @@ const useTimelineStore = create<TimelineStore>((set) => ({
       input: `Ciao! 👋
 This is Emi, I'm an italian Full Stack Developer based in New York.`,
       questions: ["Who is this?", "Enough, send CV."],
-      answered: false,
     },
   ],
-  setTimeline: (oldMessage, newMessage) =>
-    set((store) => ({ timeline: [oldMessage, newMessage] })),
+  userResponses: [],
+  setTimeline: (newMessage) =>
+    set((store) => ({ timeline: [...store.timeline, newMessage] })),
+  setUserResponses: (response) =>
+    set((store) => ({ userResponses: [...store.userResponses, response] })),
 }));
 
 export default useTimelineStore;
