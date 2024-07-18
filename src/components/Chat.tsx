@@ -9,7 +9,10 @@ interface Props {
 
 const Chat = ({ input, userAnswers }: Props) => {
   const { setTimeline, userResponses, setUserResponses } = useTimelineStore();
-  const sentTime = `${new Date().getHours()}:${new Date().getMinutes()}`;
+  const sentTime = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   // check if one of the possible answers have already been answered
   const userChoice = userAnswers.find((answer) =>
     userResponses.includes(answer)
@@ -30,9 +33,22 @@ const Chat = ({ input, userAnswers }: Props) => {
           <div className="chat-footer opacity-50">Delivered</div>
         </div>
         <div className="chat chat-end my-5">
-          <div className="chat-header"></div>
           {userChoice ? (
-            userChoice
+            <>
+              <div className="chat-image avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS chat bubble component"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  />
+                </div>
+              </div>
+              <div className="chat-header">
+                <time className="text-xs opacity-50">{sentTime}</time>
+              </div>
+              <div className="chat-bubble">{userChoice}</div>
+              <div className="chat-footer opacity-50">Seen at {sentTime}</div>
+            </>
           ) : (
             <div className="flex gap-3">
               {userAnswers.map((answer) =>
@@ -59,7 +75,6 @@ const Chat = ({ input, userAnswers }: Props) => {
               )}
             </div>
           )}
-
           <div className="chat-footer opacity-50 hidden">Seen at 12:46</div>
         </div>
       </div>
