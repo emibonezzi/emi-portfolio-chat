@@ -9,8 +9,12 @@ function App() {
   return (
     <div className="h-screen mt-5 flex justify-center p-5">
       <div>
-        {timeline.map((chat) => (
-          <Chat input={chat.input} userAnswers={chat.questions} />
+        {timeline.map((message) => (
+          <Chat
+            input={message.input}
+            userAnswers={message.questions}
+            answered={message.answered}
+          />
         ))}
       </div>
     </div>
