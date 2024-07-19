@@ -99,6 +99,13 @@ export const qa = [
         </a>
         <br />
         <br />
+        If haven't already you can download my resume here: <br />
+        <a href={resume} target="_blank">
+          <button className="btn btn-sm my-5 btn-outline">
+            Download <FaCloudDownloadAlt />
+          </button>
+        </a>
+        <br />
         Looking forward to hearing from you! Have a great day! 😊
       </p>
     ),
