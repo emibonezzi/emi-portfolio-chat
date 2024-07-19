@@ -1,8 +1,8 @@
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import "./App.css";
 import Chat from "./components/Chat";
 import useTimelineStore from "./state-management/timeline/store";
-import { motion } from "framer-motion";
 
 function App() {
   const { timeline } = useTimelineStore();
