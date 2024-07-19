@@ -264,6 +264,6 @@ export const qa = [
         everyone's input is crucial to achieving great results. 💡
       </p>
     ),
-    followUpQs: ["Great, let's connect!"],
+    followUpQs: ["Great, let's connect."],
   },
 ];
