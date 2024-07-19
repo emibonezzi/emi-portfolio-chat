@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 import propic from "../assets/propic.jpeg";
+import avatar from "../assets/avatar.jpeg";
 import { qa } from "../data/qa";
 import useTimelineStore from "../state-management/timeline/store";
 
 interface Props {
-  input: string;
+  input: string | ReactNode;
   userAnswers: string[];
-  media: string | undefined;
 }
 
-const Chat = ({ input, userAnswers, media }: Props) => {
+const Chat = ({ input, userAnswers }: Props) => {
   const { setTimeline, userResponses, setUserResponses } = useTimelineStore();
   const sentTime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
@@ -22,7 +22,7 @@ const Chat = ({ input, userAnswers, media }: Props) => {
   return (
     <div>
       <div>
-        <div className="chat chat-start max-w-[600px]">
+        <div className="chat chat-start lg:w-[600px]">
           <div className="chat-image avatar">
             <div className="w-10 rounded-full">
               <img alt="Tailwind CSS chat bubble component" src={propic} />
@@ -31,20 +31,14 @@ const Chat = ({ input, userAnswers, media }: Props) => {
           <div className="chat-header">
             <time className="text-xs ml-2 opacity-50">{sentTime}</time>
           </div>
-          <div className="chat-bubble">
-            {input}
-            <img src={media} />
-          </div>
+          <div className="chat-bubble">{input}</div>
         </div>
         <div className="chat chat-end my-5">
           {userChoice ? (
             <>
               <div className="chat-image avatar">
                 <div className="w-10 rounded-full">
-                  <img
-                    alt="Tailwind CSS chat bubble component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+                  <img alt="Tailwind CSS chat bubble component" src={avatar} />
                 </div>
               </div>
               <div className="chat-header"></div>

@@ -12,7 +12,7 @@ const useTimelineStore = create<TimelineStore>((set) => ({
   timeline: [
     {
       input: `Ciao! 👋
-This is Emi, I'm an italian Full Stack Developer based in New York.`,
+This is Emi, I'm a Full Stack Developer based in New York.`,
       questions: ["Tell me more!", "Enough, send resume."],
     },
   ],
