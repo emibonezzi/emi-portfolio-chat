@@ -1,9 +1,9 @@
 import { FaCloudDownloadAlt } from "react-icons/fa";
-import newyork from "../assets/newyork.webp";
-import okboss from "../assets/okboss.gif";
-import ops from "../assets/ops.gif";
-import resume from "../assets/resume.pdf";
-import eyesonme from "/src/assets/eyesonme.gif";
+import newyork from "../../public/newyork.webp";
+import okboss from "../../public/okboss.gif";
+import ops from "../../public/ops.gif";
+import resume from "../../public/resume.pdf";
+import eyesonme from "../../public/eyesonme.gif";
 
 export const qa = [
   {

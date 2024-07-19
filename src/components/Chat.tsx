@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import avatar from "../assets/avatar.jpeg";
-import propic from "../assets/propic.jpeg";
+import avatar from "../../public/avatar.jpeg";
+import propic from "../../public/propic.jpeg";
 import { qa } from "../data/qa";
 import useTimelineStore from "../state-management/timeline/store";
 
