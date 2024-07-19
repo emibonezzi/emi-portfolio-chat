@@ -23,7 +23,7 @@ This is Emi, I'm a Full Stack Developer based in New York.`,
   setUserResponses: (response) =>
     set((store) => ({ userResponses: [...store.userResponses, response] })),
   reset: () =>
-    set((store) => ({
+    set(() => ({
       timeline: [
         {
           input: `Ciao! 👋
