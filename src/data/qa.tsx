@@ -65,7 +65,44 @@ export const qa = [
         </a>
       </p>
     ),
-    followUpQs: ["Let's connect!", "Show me more."],
+    followUpQs: ["Great! Let's connect.", "Show me more."],
+  },
+  {
+    userAnswer: "Great! Let's connect.",
+    emiAnswer: (
+      <p>
+        Awesome! I'm excited to connect with you. You can reach out to me
+        through the following channels:
+        <br />
+        <br />
+        <strong>Email:</strong>{" "}
+        <a className="text-primary" href="me@emilianobonezzi.com">
+          me@emilianobonezzi.com
+        </a>
+        <br />
+        <strong>LinkedIn:</strong>{" "}
+        <a
+          className="text-primary"
+          href="https://www.linkedin.com/in/emiliano-bonezzi"
+          target="_blank"
+        >
+          linkedin.com/in/emiliano-bonezzi
+        </a>
+        <br />
+        <strong>GitHub:</strong>{" "}
+        <a
+          className="text-primary"
+          href="https://github.com/emibonezzi"
+          target="_blank"
+        >
+          github.com/emibonezzi
+        </a>
+        <br />
+        <br />
+        Looking forward to hearing from you! Have a great day! 😊
+      </p>
+    ),
+    followUpQs: ["Restart"],
   },
   {
     userAnswer: "OMG sorry 😐 What is your tech stack?",
@@ -130,7 +167,7 @@ export const qa = [
         </a>
       </p>
     ),
-    followUpQs: ["Let's connect!", "Show me more."],
+    followUpQs: ["Great! Let's connect.", "Show me more."],
   },
   {
     userAnswer: "Got it. Any projects?",
@@ -157,7 +194,7 @@ export const qa = [
         </a>
       </p>
     ),
-    followUpQs: ["Let's connect!", "Show me more."],
+    followUpQs: ["Great! Let's connect.", "Show me more."],
   },
   {
     userAnswer: "Show me more.",
@@ -183,7 +220,7 @@ export const qa = [
         </a>
       </p>
     ),
-    followUpQs: ["Wow! Let's connect.", "A lil more? 🙏"],
+    followUpQs: ["Great! Let's connect.", "A lil more? 🙏"],
   },
   {
     userAnswer: "A lil more? 🙏",
@@ -210,7 +247,7 @@ export const qa = [
         </a>
       </p>
     ),
-    followUpQs: ["What motivates you?", "Got it. Let's connect."],
+    followUpQs: ["What motivates you?", "Great! Let's connect."],
   },
   {
     userAnswer: "Mmm pizza... 🍕",

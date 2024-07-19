@@ -6,6 +6,7 @@ interface TimelineStore {
   userResponses: string[];
   setTimeline: (newMessage: Message) => void;
   setUserResponses: (response: string) => void;
+  reset: () => void;
 }
 
 const useTimelineStore = create<TimelineStore>((set) => ({
@@ -21,6 +22,17 @@ This is Emi, I'm a Full Stack Developer based in New York.`,
     set((store) => ({ timeline: [...store.timeline, newMessage] })),
   setUserResponses: (response) =>
     set((store) => ({ userResponses: [...store.userResponses, response] })),
+  reset: () =>
+    set((store) => ({
+      timeline: [
+        {
+          input: `Ciao! 👋
+This is Emi, I'm a Full Stack Developer based in New York.`,
+          questions: ["Tell me more!", "Enough, send resume."],
+        },
+      ],
+      userResponses: [],
+    })),
 }));
 
 export default useTimelineStore;

@@ -10,7 +10,8 @@ interface Props {
 }
 
 const Chat = ({ input, userAnswers }: Props) => {
-  const { setTimeline, userResponses, setUserResponses } = useTimelineStore();
+  const { setTimeline, userResponses, setUserResponses, reset } =
+    useTimelineStore();
   const sentTime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
@@ -51,15 +52,20 @@ const Chat = ({ input, userAnswers }: Props) => {
                 !userResponses.includes(answer) ? (
                   <button
                     onClick={() => {
-                      // find user answer in qa
-                      const selectedAnswer = qa.find(
-                        (answers) => answers.userAnswer === answer
-                      );
-                      setUserResponses(answer);
-                      setTimeline({
-                        input: selectedAnswer?.emiAnswer!!,
-                        questions: selectedAnswer?.followUpQs!!,
-                      });
+                      if (answer === "Restart") {
+                        // restart chat
+                        reset();
+                      } else {
+                        // find user answer in qa
+                        const selectedAnswer = qa.find(
+                          (answers) => answers.userAnswer === answer
+                        );
+                        setUserResponses(answer);
+                        setTimeline({
+                          input: selectedAnswer?.emiAnswer!!,
+                          questions: selectedAnswer?.followUpQs!!,
+                        });
+                      }
                     }}
                     className="btn btn-xs btn-outline"
                   >
