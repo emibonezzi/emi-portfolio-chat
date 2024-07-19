@@ -155,7 +155,7 @@ export const qa = [
         platform. It scrapes job listings from the official New York State jobs
         website and presents them in an organized and searchable format.
         <br /> <br />
-        <a href="https://newworkstate-fe.vercel.app/jobs" target="_blank">
+        <a href="https://newworkstate-fe.vercel.app" target="_blank">
           <u>Live demo URL</u>
         </a>
         <br />
