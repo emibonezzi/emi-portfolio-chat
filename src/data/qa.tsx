@@ -76,7 +76,7 @@ export const qa = [
         <br />
         <br />
         <strong>Email:</strong>{" "}
-        <a className="text-primary" href="me@emilianobonezzi.com">
+        <a className="text-primary" href="mailto:me@emilianobonezzi.com">
           me@emilianobonezzi.com
         </a>
         <br />
